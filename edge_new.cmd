@@ -11,5 +11,4 @@ reg import disablesavepw.reg
 echo downloading webdriver
 DISM.exe /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0
 echo enabling autoPlay
-echo [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Main]
-"MediaAutoPlayOption"=dword:00000000
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE/Policies/Microsoft/Edge" /v "AutoplayAllowed" /t REG_DWORD /d 0x00000001 /f
